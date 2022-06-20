@@ -8,12 +8,10 @@ public class Serie {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-
     @Column(length = 50, nullable = false, name="title")
     private String title;
     @Column(length = 255, nullable = false, name="description")
     private String description;
-
 
     public Integer getId() {
         return id;
@@ -37,5 +35,14 @@ public class Serie {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    @Override
+    public String toString() {
+        return "Serie{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", description='" + description + '\'' +
+                '}';
     }
 }

@@ -30,20 +30,14 @@ public class SerieController {
     @PostMapping("/save")
     public String saveSerie(Serie serie) {
         service.save(serie);
-
         return "redirect:/";
     }
 
-    @GetMapping("/edit/{id}")
-    public String showEditForm(@PathVariable("id") Integer id, Model model) {
-        try {
-            Serie serie = service.get(id);
-            model.addAttribute("serie", serie);
-            return "serie_form";
-        } catch (UserPrincipalNotFoundException e) {
-            e.printStackTrace();
-            return "redirect:/";
-        }
+    @GetMapping("/editar/{id}")
+    public String showEditForm(@PathVariable("id") Integer id, Model model) throws UserPrincipalNotFoundException {
+        Serie serie = service.get(id);
+        model.addAttribute("serie", serie);
+        return "serie_form";
     }
 
     @GetMapping("/excluir/{id}")
