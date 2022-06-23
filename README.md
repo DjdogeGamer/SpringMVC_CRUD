@@ -12,6 +12,7 @@ Spring MVC Crud for my Internship Challange
 * Hibernate
 * Thymeleaf
 * Boostrap 5
+* Heroku
 * Git&GitHub
 * GitHub Actions (CI/CD)
 * JUnit 5 
