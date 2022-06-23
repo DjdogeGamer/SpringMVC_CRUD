@@ -29,27 +29,32 @@
         <h1 class="mt-4 mb-4 mt-4 p-4 m-4">Adicionar Uma Série</h1>
         <div class="border-top border-2 border-danger mt-4 mb-4"></div>
 
-        <form class="float-start m-4 " th:action="@{/series/save}" method="post" th:object="${serie}"
+        <form class="float-start m-4" enctype="multipart/form-data" th:action="@{/series/save}" method="post" th:object="${serie}"
               style="max-width: 500px; margin: 0 auto;">
 
             <input th:field="*{id}" type="hidden"/>
 
             <div class="border border-secondary rounded p-3">
-                <div class="d-flex p-2 form-group row">
-                    <label class="col-sm-4 col-form-label">Título</label>
-                    <div class="col-sm-8">
+                <div class="d-flex form-group row">
+                    <label class="col-bg-12 col-form-label">Título</label>
+                    <div class="col-bg-12">
                         <input class="form-control" th:field="*{title}" type="text"/>
                     </div>
                 </div>
             </div>
 
             <div class="border border-secondary rounded p-3 mt-4 mb-4">
-                <div class="d-flex p-2 form-group row">
-                    <label class="col-sm-4 col-form-label">Descrição</label>
-                    <div class="col-sm-8">
+                <div class="d-flex form-group row">
+                    <label class="col-bg-12 col-form-label">Descrição</label>
+                    <div class="col-bg-12">
                         <textarea class="form" th:field="*{description}" rows="5"></textarea>
                     </div>
                 </div>
+            </div>
+
+            <div class="form-group cold-md-12">
+                <label>Selecione uma imagem</label>
+                <input type="file" name="file">
             </div>
 
             <button type="submit" class="btn btn-secondary m-2">Salvar</button>

@@ -14,11 +14,11 @@ public class ImplementsUserDetailsService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String name) throws UsernameNotFoundException {
-        User user = ur.findByLogin(name);
+        UserEntity userEntity = ur.findByLogin(name);
 
-        if(user == null) {
+        if(userEntity == null) {
             throw new UsernameNotFoundException("Usuario nao encontrado");
         }
-        return user;
+        return userEntity;
     }
 }

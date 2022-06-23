@@ -8,10 +8,14 @@ public class Serie {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+    private String imageName;
     @Column(length = 50, nullable = false, name="title")
     private String title;
     @Column(length = 255, nullable = false, name="description")
     private String description;
+
+    public String getImageName() { return imageName; }
+    public void setImageName(String imageName) { this.imageName = imageName; }
 
     public Integer getId() {
         return id;
@@ -45,4 +49,5 @@ public class Serie {
                 ", description='" + getDescription() + '\'' +
                 '}';
     }
+
 }
