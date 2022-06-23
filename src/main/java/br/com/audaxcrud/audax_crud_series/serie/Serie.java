@@ -40,9 +40,9 @@ public class Serie {
     @Override
     public String toString() {
         return "Serie{" +
-                "id=" + id +
-                ", title='" + title + '\'' +
-                ", description='" + description + '\'' +
+                "id=" + getId() +
+                ", title='" + getTitle() + '\'' +
+                ", description='" + getDescription() + '\'' +
                 '}';
     }
 }

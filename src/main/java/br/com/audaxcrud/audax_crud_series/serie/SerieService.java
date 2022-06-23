@@ -25,13 +25,13 @@ public class SerieService {
         if (result.isPresent()) {
             return result.get();
         }
-        throw new UserPrincipalNotFoundException("Nenhuma serie com o ID: "+id);
+        throw new UserPrincipalNotFoundException("Nenhuma Série com o ID: "+id);
     }
 
     public void delete(Integer id){
         Long count = repo.countById(id);
         if(count == null || count == 0){
-            System.out.println("Nao foi possivel deletar a serie");
+            System.out.println("Não foi possível deletar a Série");
         }
         repo.deleteById(id);
     }
