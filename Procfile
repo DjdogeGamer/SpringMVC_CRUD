@@ -1,1 +1,1 @@
-web: java -war $JAVA_OPTS -Dserver.port=$PORT target/audax_crud_series.war
+  web: java -jar build/libs/audax_crud_series.jar
